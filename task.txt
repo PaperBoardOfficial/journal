@@ -1,0 +1,86 @@
+Application Scenario
+Imagine a user who journals daily to capture moments of inspiration, gratitude,
+and reflection. They snap a photo of their morning coffee, record a quick audio
+reflection about goals for the day, and jot down a few lines about what they
+learned or felt. Later, they want to revisit their favorite insights or images—
+perhaps hearing a motivation clip from a week ago or seeing all photos tagged
+“gratitude.” Your task is to build an app that makes this possible.
+Overview
+The Journal Memory Assistant is a React Native app that uses Mem0’s multimodal
+memory layer to capture, index, and retrieve journal entries—photos, audio
+reflections, and text notes. Each entry is enriched with metadata (timestamp, tags,
+optional location) and processed through modality-specific embeddings (CLIP for
+images, Whisper transcription for audio, and text embeddings) to deliver fast,
+semantic search across formats.
+Objectives
+
+1. Capture & Ingest
+   Implement three journal entry modes in React Native: camera snapshot,
+   audio recorder, and text input.
+   On submit, send a memory payload:
+   {
+   "type": "image|audio|text",
+   "data": <binary|string>,
+   "metadata": { "timestamp": <ISO>, "tags": [<string>], "mood": <optio
+   nal>, "location": <optional> }
+   }
+2. Embedding & Storage
+   Configure Mem0 to process each modality:
+   Images
+   Audio
+   Text
+3. Semantic Search & Recall
+   Develop a search interface allowing natural-language queries (e.g., “show
+   me my gratitude notes,” “play audio reflections from last Friday”).
+   Mem0 already has APIs to help you do this.
+4. User Experience
+   Tab navigation for “New Entry” and “Search Journal.”
+   Modal for adding tags and mood indicators.
+   Mixed-media result display: image thumbnails, text cards, and audio
+   players with transcript snippets.
+
+Tasks
+
+1. Backend Service
+   Set up a Node.js or Python server with Mem0 SDK configured.
+   Create RESTful endpoints:
+   POST /api/journal to add an entry
+   GET /api/journal?query=<text>&types=image,audio,text&tags=<tag>&dateFrom=<ISO>&dateTo=
+   <ISO> to search
+
+2. React Native Client
+   Camera integration
+   Audio recording
+   Text entry form with tag and mood picker
+   Implement network calls to backend endpoints and handle loading/error
+   states
+
+3. Search & Display
+   Search bar to accept queries and UI controls for filters
+   Render results as mixed-media components:
+   Images in a scrollable grid
+   Text entries in expandable cards
+   Audio memos with play controls and transcript excerpts
+
+4. Documentation & Demo
+   Update README with:
+   Setup and installation steps
+   API documentation and example requests/responses
+   Running the mobile client
+   Produce a 3–5 minute demo video highlighting:
+   Creating entries in all three modes
+   Performing searches and reviewing mixed results
+   Deliverables
+   Public GitHub repository with /server and /mobile directories
+   Clear README covering setup, architecture, and API usage
+   Demo video link (YouTube, Vimeo, or similar)
+
+Evaluation Criteria
+Full Functionality: Ability to capture and retrieve image, audio, and text journal
+entries.
+Code Quality: Well-structured, maintainable code with robust error handling.
+API Design & Data Model: Clear endpoints, payload schemas, and metadata
+choices.
+User Experience: Intuitive UI for journaling and searching, responsive design.
+Documentation & Demo: Comprehensive README and engaging, concise
+demo.
