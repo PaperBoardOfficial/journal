@@ -24,6 +24,9 @@ Here's a visual tour of the Journal Memory Assistant application:
   <img src="screenshots/Screenshot_20250515_125426.jpg" alt="Mood Selection" width="240" />
   <img src="screenshots/Screenshot_20250515_125436.jpg" alt="Tag Selection" width="240" />
   <img src="screenshots/Screenshot_20250515_125442.jpg" alt="Search Results" width="240" />
+  <img src="screenshots/Screenshot_20250515_131336.jpg" alt="Journal Entry Details" width="240" />
+  <img src="screenshots/Screenshot_20250515_131350.jpg" alt="Audio Playback" width="240" />
+  <img src="screenshots/Screenshot_20250515_131422.jpg" alt="Image Entry View" width="240" />
 </div>
 
 ## Repository Structure
